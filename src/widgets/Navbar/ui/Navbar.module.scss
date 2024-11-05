@@ -1,0 +1,17 @@
+.Navbar {
+	padding: 0px 15px;
+	width: 100%;
+	height: var(--navbar-height);
+	background-color: var(--bg-color-secondray);
+	display: flex;
+	&:not(:last-child) {
+		margin: 0px 0px 20px 0px;
+	}
+	&__links {
+		margin-left: auto;
+		height: inherit;
+	}
+	&__switchers {
+		display: flex;
+	}
+}

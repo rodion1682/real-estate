@@ -1,0 +1,9 @@
+.LangSwitcher {
+	padding: 0px 7px;
+	gap: 5px;
+	span {
+		color: var(--primary-color);
+		font-weight: 600;
+		letter-spacing: var(--letter-spacing);
+	}
+}

@@ -1,0 +1,17 @@
+.AppLink {
+}
+
+.navbar {
+	padding: 0px 15px;
+	height: 100%;
+	display: inline-flex;
+	align-items: center;
+	transition: background-color 0.3s ease 0s;
+	letter-spacing: var(--letter-spacing);
+	font-weight: 600;
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: var(--bg-color-hover);
+		}
+	}
+}

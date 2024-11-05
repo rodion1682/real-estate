@@ -1,0 +1,24 @@
+.Filterbar {
+	padding: 0px 15px;
+	height: var(--filberbar-height);
+	background-color: var(--bg-color-secondray);
+	display: flex;
+	gap: 20px;
+	&:not(:last-child) {
+		margin: 0px 0px 20px 0px;
+	}
+	&__select {
+		flex: 0 1 20%;
+	}
+	&__actions {
+		flex: 0 1 20%;
+		display: flex;
+		gap: 3px;
+	}
+	&__button {
+		flex: 0 1 50%;
+	}
+	&__input {
+		flex: 1 1 auto;
+	}
+}
