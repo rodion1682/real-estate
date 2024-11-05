@@ -2,6 +2,7 @@ import globals from 'globals';
 import pluginJs from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import pluginReact from 'eslint-plugin-react';
+import i18next from 'eslint-plugin-i18next';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -17,6 +18,7 @@ export default [
 	pluginJs.configs.recommended,
 	...tseslint.configs.recommended,
 	pluginReact.configs.flat.recommended,
+	i18next.configs['flat/recommended'],
 	{
 		rules: {
 			indent: [2, 'tab'],
@@ -49,6 +51,11 @@ export default [
 			'no-tabs': 'off',
 			'no-unused-vars': 'warn',
 			'no-undef': 'warn',
+
+			'i18next/no-literal-string': [
+				'error',
+				{ markupOnly: true, onlyAttribute: false },
+			],
 		},
 	},
 ];

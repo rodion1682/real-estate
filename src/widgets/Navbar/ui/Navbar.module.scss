@@ -1,16 +1,19 @@
 .Navbar {
-	padding: 0px 15px;
-	width: 100%;
-	height: var(--navbar-height);
 	background-color: var(--bg-color-secondray);
 	display: flex;
+	height: var(--navbar-height);
+	padding: 0 15px;
+	width: 100%;
+
 	&:not(:last-child) {
-		margin: 0px 0px 20px 0px;
+		margin: 0 0 20px 0;
 	}
+
 	&__links {
-		margin-left: auto;
 		height: inherit;
+		margin-left: auto;
 	}
+
 	&__switchers {
 		display: flex;
 	}

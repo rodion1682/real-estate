@@ -1,23 +1,28 @@
 .Filterbar {
-	padding: 0px 15px;
-	height: var(--filberbar-height);
 	background-color: var(--bg-color-secondray);
 	display: flex;
 	gap: 20px;
+	height: var(--filberbar-height);
+	padding: 0 15px;
+
 	&:not(:last-child) {
-		margin: 0px 0px 20px 0px;
+		margin: 0 0 20px 0;
 	}
+
 	&__select {
 		flex: 0 1 20%;
 	}
+
 	&__actions {
-		flex: 0 1 20%;
 		display: flex;
+		flex: 0 1 20%;
 		gap: 3px;
 	}
+
 	&__button {
 		flex: 0 1 50%;
 	}
+
 	&__input {
 		flex: 1 1 auto;
 	}
