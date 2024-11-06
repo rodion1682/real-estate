@@ -2,7 +2,6 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import cls from './MainPage.module.scss';
 import { Filterbar } from 'widgets/Filterbar/ui/Filterbar';
-import { BugButton } from 'app/providers/ErrorBoundary';
 
 interface MainPageProps {
 	className?: string;
@@ -13,7 +12,7 @@ const MainPage = ({ className }: MainPageProps) => {
 	return (
 		<div className={classNames(cls.MainPage, {}, [className])}>
 			<Filterbar />
-			<div>{t('Main page')}</div>;
+			<div>{t('Main page')}</div>
 		</div>
 	);
 };

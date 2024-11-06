@@ -7,12 +7,13 @@
 	font-weight: 600;
 	height: 100%;
 	letter-spacing: var(--letter-spacing);
-	padding: 0 15px;
+	padding: 8px 15px;
 	transition: background-color 0.3s ease 0s;
-
+	border: 1px solid var(--primary-color);
+	border-radius: var(--border-radius);
 	@media (any-hover: hover) {
 		&:hover {
-			background-color: var(--bg-color-hover);
+			background-color: var(--bg-color);
 		}
 	}
 }

@@ -1,31 +1,38 @@
-.filter {
-	align-items: center;
-	background-color: transparent;
-	color: var(--primary-color);
+.Button {
 	display: flex;
-	font-weight: 600;
-	height: 100%;
+	align-items: center;
 	justify-content: center;
+	background-color: transparent;
+	display: inline-flex;
+	height: 100%;
+	color: var(--primary-color);
+	border: 1px solid var(--primary-color);
+	border-radius: var(--border-radius);
+	font-weight: 600;
 	letter-spacing: var(--letter-spacing);
-	padding: 0 15px;
 	transition: background-color 0.3s ease 0s;
-
 	@media (any-hover: hover) {
 		&:hover {
-			background-color: var(--bg-color-hover);
+			background-color: var(--bg-color);
 		}
 	}
 }
 
-.switcher {
-	align-items: center;
-	background-color: transparent;
-	display: inline-flex;
-	height: 100%;
+.main_button {
+	padding: 8px 15px;
+}
 
-	@media (any-hover: hover) {
-		&:hover {
-			background-color: var(--bg-color-hover);
-		}
+.theme_switcher {
+	padding: 0px 10px 0px 6px;
+}
+
+.lang_switcher {
+	gap: 5px;
+	padding: 0px 10px;
+
+	span {
+		color: var(--primary-color);
+		font-weight: 600;
+		letter-spacing: var(--letter-spacing);
 	}
 }

@@ -1,8 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import cls from './LangSwitcher.module.scss';
 import { Button, ButtonTheme } from 'shared/ui/Button/ui/Button';
-import { SvgIcon, SvgIconSizes } from 'shared/ui/SvgIcon/ui/SvgIcon';
+import { SvgIcon } from 'shared/ui/SvgIcon/ui/SvgIcon';
 import LangIcon from 'shared/assets/lang.svg';
 
 interface LangSwitcherProps {
@@ -17,14 +16,11 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
 
 	return (
 		<Button
-			className={classNames(cls.LangSwitcher, {}, [className])}
+			className={classNames('', {}, [className])}
 			onClick={toggleLanguage}
-			theme={ButtonTheme.SWITCHER}
+			theme={ButtonTheme.LANG_SWITCHER}
 		>
-			<SvgIcon
-				children={<LangIcon />}
-				size={SvgIconSizes.NAVBAR_LANG_SIZE}
-			/>
+			<SvgIcon children={<LangIcon />} />
 			<span>{t('Language')}</span>
 		</Button>
 	);

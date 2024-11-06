@@ -6,9 +6,9 @@ describe('Button', () => {
 		render(<Button>TEST</Button>);
 		expect(screen.getByText('TEST')).toBeInTheDocument();
 	});
-	test('Test filter theme', () => {
-		render(<Button theme={ButtonTheme.FILTER}>TEST</Button>);
-		expect(screen.getByText('TEST')).toHaveClass('filter');
+	test('Test main theme', () => {
+		render(<Button theme={ButtonTheme.MAIN_BUTTON}>TEST</Button>);
+		expect(screen.getByText('TEST')).toHaveClass('main');
 		screen.debug();
 	});
 });

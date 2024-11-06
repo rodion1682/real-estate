@@ -3,8 +3,9 @@ import cls from './Button.module.scss';
 import { ButtonHTMLAttributes, FC } from 'react';
 
 export enum ButtonTheme {
-	FILTER = 'filter',
-	SWITCHER = 'switcher',
+	MAIN_BUTTON = 'main_button',
+	THEME_SWITCHER = 'theme_switcher',
+	LANG_SWITCHER = 'lang_switcher',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -16,7 +17,7 @@ export const Button: FC<ButtonProps> = (props) => {
 	const {
 		className,
 		children,
-		theme = ButtonTheme.SWITCHER,
+		theme = ButtonTheme.MAIN_BUTTON,
 		...otherProps
 	} = props;
 	return (

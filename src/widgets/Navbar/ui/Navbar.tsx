@@ -18,7 +18,7 @@ export const Navbar = ({ className }: NavbarProps) => {
 			<div className={cls.Navbar__actions}>
 				<AppLink to={RoutePath.main}>Main</AppLink>
 				<AppLink to={RoutePath.apartment}>Apartament</AppLink>
-				<ThemeSwitcher />
+				<ThemeSwitcher className={cls.Navbar__theme} />
 				<LangSwitcher />
 			</div>
 		</div>

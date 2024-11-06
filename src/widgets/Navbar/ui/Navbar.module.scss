@@ -2,20 +2,14 @@
 	background-color: var(--bg-color-secondray);
 	display: flex;
 	height: var(--navbar-height);
-	padding: 0 15px;
+	padding: 8px 15px;
 	width: 100%;
-
-	&__links {
-		height: inherit;
-		margin-left: auto;
-	}
-
-	&__switchers {
-		display: flex;
-	}
-
 	&__actions {
 		display: flex;
+		gap: 10px;
 		margin-left: auto;
+	}
+	&__theme {
+		padding: 0px 10px 0px 6px;
 	}
 }
