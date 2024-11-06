@@ -54,8 +54,14 @@ export default [
 
 			'i18next/no-literal-string': [
 				'error',
-				{ markupOnly: true, onlyAttribute: false },
+				{ markupOnly: true, ignoreAttribute: ['data-testid'] },
 			],
+		},
+	},
+	{
+		files: ['**/src/**/*.test.{ts,tsx}'],
+		rules: {
+			'i18next/no-literal-string': 'off',
 		},
 	},
 ];
