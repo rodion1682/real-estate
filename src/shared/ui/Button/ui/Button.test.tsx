@@ -8,7 +8,7 @@ describe('Button', () => {
 	});
 	test('Test main theme', () => {
 		render(<Button theme={ButtonTheme.MAIN_BUTTON}>TEST</Button>);
-		expect(screen.getByText('TEST')).toHaveClass('main');
+		expect(screen.getByText('TEST')).toHaveClass('main_button');
 		screen.debug();
 	});
 });

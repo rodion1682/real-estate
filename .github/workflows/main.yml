@@ -53,3 +53,7 @@ jobs:
          - name: Build Storybook
            run: npm run storybook:build
            if: success() || failure()
+
+         - name: Screenshot testing
+           run: npm run test:ui:ci
+           if: success() || failure()
