@@ -1,0 +1,19 @@
+.PageError {
+	min-height: calc(100vh - var(--navbar-height));
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	p {
+		font: var(--font-xl);
+		&:not(:last-child) {
+			margin: 0px 0px 20px 0px;
+		}
+	}
+	button {
+		padding: 8px 15px;
+		border: 1px solid var(--primary-color);
+	}
+}

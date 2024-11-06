@@ -13,11 +13,9 @@ interface NavbarProps {
 export const Navbar = ({ className }: NavbarProps) => {
 	return (
 		<div className={classNames(cls.Navbar, {}, [className])}>
-			<div className={cls.Navbar__links}>
+			<div className={cls.Navbar__actions}>
 				<AppLink to={RoutePath.main}>Main</AppLink>
 				<AppLink to={RoutePath.apartment}>Apartament</AppLink>
-			</div>
-			<div className={cls.Navbar__switchers}>
 				<ThemeSwitcher />
 				<LangSwitcher />
 			</div>

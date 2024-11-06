@@ -3,5 +3,8 @@
 	"Translate": "Перевод",
 	"Sale": "Продажа",
 	"Rent": "Аренда",
-	"Language": "Ru"
+	"Language": "Ru",
+	"Page not found": "Страница не найдена",
+	"An unexpected error occurred": "Произошла непредвиденная ошибка",
+	"Refresh page": "Обновить страницу"
 }

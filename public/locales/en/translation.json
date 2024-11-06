@@ -3,5 +3,8 @@
 	"Translate": "Translate",
 	"Sale": "Sale",
 	"Rent": "Rent",
-	"Language": "En"
+	"Language": "En",
+	"Page not found": "Page not found",
+	"An unexpected error occurred": "An unexpected error occurred",
+	"Refresh page": "Refresh page"
 }
