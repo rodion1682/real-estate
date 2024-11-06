@@ -4,12 +4,14 @@
 	height: var(--navbar-height);
 	padding: 8px 15px;
 	width: 100%;
+
 	&__actions {
 		display: flex;
 		gap: 10px;
 		margin-left: auto;
 	}
+
 	&__theme {
-		padding: 0px 10px 0px 6px;
+		padding: 0 10px 0 6px;
 	}
 }

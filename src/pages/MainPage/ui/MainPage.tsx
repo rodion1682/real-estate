@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import cls from './MainPage.module.scss';
-import { Filterbar } from 'widgets/Filterbar/ui/Filterbar';
+import { Filterbar } from 'widgets/Filterbar';
 
 interface MainPageProps {
 	className?: string;

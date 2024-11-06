@@ -49,8 +49,8 @@ export default [
 			'no-underscore-dangle': 'off',
 			'no-param-reassign': 'off',
 			'no-tabs': 'off',
-			'no-unused-vars': 'warn',
-			'no-undef': 'warn',
+			'no-unused-vars': 'off',
+			'no-undef': 'off',
 
 			'i18next/no-literal-string': [
 				'error',
