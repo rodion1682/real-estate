@@ -5,6 +5,9 @@ import { AppLink } from 'shared/ui/AppLink';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher/ui/LangSwitcher';
 import { useTranslation } from 'react-i18next';
+import { Modal } from 'shared/ui/Modal';
+import { useCallback, useState } from 'react';
+import { Button } from 'shared/ui/Button/ui/Button';
 
 interface NavbarProps {
 	className?: string;
@@ -12,6 +15,10 @@ interface NavbarProps {
 
 export const Navbar = ({ className }: NavbarProps) => {
 	const { t } = useTranslation('');
+	const [isAuthModal, setIsAuthModal] = useState(false);
+	const onToggleModal = useCallback(() => {
+		setIsAuthModal((prev) => !prev);
+	}, []);
 	return (
 		<div
 			className={classNames(cls.Navbar, {}, [className])}
@@ -22,6 +29,13 @@ export const Navbar = ({ className }: NavbarProps) => {
 				<AppLink to={RoutePath.apartment}>{t('Apartament page')}</AppLink>
 				<ThemeSwitcher className={cls.Navbar__theme} />
 				<LangSwitcher />
+				<Button onClick={onToggleModal}>{t('Sing in or register')}</Button>
+				<Modal isOpen={isAuthModal} onClose={onToggleModal}>
+					{t(`Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+					optio nam cupiditate quibusdam magni minima repellendus est
+					eveniet excepturi maiores, voluptate cumque perferendis omnis
+					sint aliquam unde provident quia distinctio.`)}
+				</Modal>
 			</div>
 		</div>
 	);
