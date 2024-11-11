@@ -58,7 +58,7 @@ const LangComponent = () => {
 			<SvgIcon>
 				<LangIcon />
 			</SvgIcon>
-			{/* eslint-disable-next-line i18next/no-literal-string */}
+			{ }
 			<span>En</span>
 		</>
 	);

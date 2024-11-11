@@ -3,11 +3,12 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import cls from './Navbar.module.scss';
 import { AppLink } from 'shared/ui/AppLink';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
-import { LangSwitcher } from 'widgets/LangSwitcher/ui/LangSwitcher';
+
 import { useTranslation } from 'react-i18next';
 import { Modal } from 'shared/ui/Modal';
 import { useCallback, useState } from 'react';
 import { Button } from 'shared/ui/Button/ui/Button';
+import { LangSwitcher } from 'widgets/LangSwitcher';
 
 interface NavbarProps {
 	className?: string;

@@ -2,6 +2,9 @@ import path from 'path';
 import type { Config } from 'jest';
 
 const config: Config = {
+	globals: {
+		__IS_DEV__: true,
+	},
 	clearMocks: true,
 	testEnvironment: 'jsdom',
 	coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
@@ -14,6 +17,7 @@ const config: Config = {
 	moduleNameMapper: {
 		'\\.s?css$': 'identity-obj-proxy',
 		'\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+		'entities/(.*)': '<rootDir>src/entities/$1',
 	},
 };
 
