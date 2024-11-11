@@ -3,8 +3,7 @@
 @use "themes/light";
 @use "themes/dark";
 
-.app,
-.app_modal {
+body {
 	color: var(--primary-color);
 	font: var(--font-m);
 }

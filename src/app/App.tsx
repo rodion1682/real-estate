@@ -6,9 +6,10 @@ import { Suspense } from 'react';
 
 const App = () => {
 	const { theme } = useTheme();
+	document.body.className = theme;
 
 	return (
-		<div className={classNames('app', {}, [theme])}>
+		<div className={classNames('app', {}, [])}>
 			<Suspense fallback="">
 				<Navbar />
 				<div className="app__content-page">

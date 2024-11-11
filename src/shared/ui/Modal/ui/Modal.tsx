@@ -47,8 +47,6 @@ export const Modal: FC<ModalProps> = (props) => {
 			<div
 				className={classNames(cls.Modal, { [cls.Modal__open]: isOpen }, [
 					className,
-					theme,
-					'app_modal',
 				])}
 				onClick={closeHandler}
 			>
