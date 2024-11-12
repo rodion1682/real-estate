@@ -1,6 +1,12 @@
 .Button {
-	align-items: center;
 	background-color: transparent;
+	transition: background-color 0.3s ease 0s;
+}
+
+.main_button,
+.theme_switcher,
+.lang_switcher {
+	align-items: center;
 	border: 1px solid var(--primary-color);
 	border-radius: var(--border-radius);
 	color: var(--primary-color);
@@ -10,7 +16,6 @@
 	height: 100%;
 	justify-content: center;
 	letter-spacing: var(--letter-spacing);
-	transition: background-color 0.3s ease 0s;
 
 	@media (any-hover: hover) {
 		&:hover {
@@ -35,5 +40,23 @@
 		color: var(--primary-color);
 		font-weight: 600;
 		letter-spacing: var(--letter-spacing);
+	}
+}
+
+.password {
+	align-items: center;
+	background-color: transparent;
+	border: 1px solid var(--primary-color);
+	border-bottom-right-radius: var(--border-radius);
+	border-top-right-radius: var(--border-radius);
+	display: flex;
+	height: var(--input-height);
+	justify-content: center;
+	width: 50px;
+
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: var(--bg-color);
+		}
 	}
 }

@@ -65,6 +65,7 @@ export default [
 			'react/no-children-prop': 'off',
 			'react/prop-types': 'off',
 			'react/jsx-props-no-spreading': 'warn',
+			'react/display-name': 'off',
 
 			// React Hooks rules
 			'react-hooks/rules-of-hooks': 'error',

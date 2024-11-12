@@ -6,6 +6,7 @@ export enum ButtonTheme {
 	MAIN_BUTTON = 'main_button',
 	THEME_SWITCHER = 'theme_switcher',
 	LANG_SWITCHER = 'lang_switcher',
+	PASSWORD = 'password',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

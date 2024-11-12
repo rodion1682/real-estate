@@ -6,6 +6,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { SvgIcon } from 'shared/ui/SvgIcon/ui/SvgIcon';
 import ThemeIcon from 'shared/assets/theme.svg';
 import LangIcon from 'shared/assets/lang.svg';
+import EyeIcon from 'shared/assets/eye.svg';
 
 const meta = {
 	title: 'shared/Button',
@@ -58,7 +59,7 @@ const LangComponent = () => {
 			<SvgIcon>
 				<LangIcon />
 			</SvgIcon>
-			{ }
+			{}
 			<span>En</span>
 		</>
 	);
@@ -78,3 +79,26 @@ export const LangSwitcherButtonDark: Story = {
 	},
 };
 LangSwitcherButtonDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const PasswordButton: Story = {
+	args: {
+		children: (
+			<SvgIcon>
+				<EyeIcon />
+			</SvgIcon>
+		),
+		theme: ButtonTheme.PASSWORD,
+	},
+};
+
+export const PasswordButtonDark: Story = {
+	args: {
+		children: (
+			<SvgIcon>
+				<EyeIcon />
+			</SvgIcon>
+		),
+		theme: ButtonTheme.PASSWORD,
+	},
+};
+PasswordButtonDark.decorators = [ThemeDecorator(Theme.DARK)];
