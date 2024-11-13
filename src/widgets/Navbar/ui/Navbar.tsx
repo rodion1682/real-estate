@@ -61,7 +61,9 @@ export const Navbar = ({ className }: NavbarProps) => {
 				<ThemeSwitcher className={cls.Navbar__theme} />
 				<LangSwitcher />
 				<Button onClick={onOpenModal}>{t('Sing in')}</Button>
-				<LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+				{isAuthModal && (
+					<LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+				)}
 			</div>
 		</div>
 	);
