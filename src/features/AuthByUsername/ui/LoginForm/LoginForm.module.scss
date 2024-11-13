@@ -5,6 +5,18 @@
 	flex-direction: column;
 	min-width: 320px;
 
+	&__title {
+		&:not(:last-child) {
+			margin: 0 0 10px 0;
+		}
+	}
+
+	&__error {
+		&:not(:last-child) {
+			margin: 0 0 10px 0;
+		}
+	}
+
 	&__items {
 		&:not(:last-child) {
 			margin: 0 0 20px 0;

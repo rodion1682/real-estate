@@ -1,0 +1,21 @@
+.Text {
+	&__title {
+		color: var(--primary-color);
+		font: var(--font-l);
+	}
+
+	&__text {
+		color: var(--secondray-color);
+		font: var(--font-m);
+	}
+}
+
+.error {
+	.Text__title {
+		color: var(--red-light);
+	}
+
+	.Text__text {
+		color: var(--red-dark);
+	}
+}

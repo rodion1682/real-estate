@@ -5,7 +5,8 @@
 
 .main_button,
 .theme_switcher,
-.lang_switcher {
+.lang_switcher,
+.submit {
 	align-items: center;
 	border: 1px solid var(--primary-color);
 	border-radius: var(--border-radius);
@@ -24,7 +25,8 @@
 	}
 }
 
-.main_button {
+.main_button,
+.submit {
 	padding: 8px 15px;
 }
 
@@ -57,6 +59,20 @@
 	@media (any-hover: hover) {
 		&:hover {
 			background-color: var(--bg-color);
+		}
+	}
+}
+
+.disabled {
+	opacity: 0.5;
+}
+
+.submit {
+	background-color: var(--hint-color);
+
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: var(--hint-hover-color);
 		}
 	}
 }

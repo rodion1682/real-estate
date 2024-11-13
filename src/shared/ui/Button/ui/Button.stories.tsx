@@ -102,3 +102,20 @@ export const PasswordButtonDark: Story = {
 	},
 };
 PasswordButtonDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Disabled: Story = {
+	args: {
+		children: 'Text',
+		disabled: true,
+		theme: ButtonTheme.SUBMIT,
+	},
+};
+
+export const DisabledDark: Story = {
+	args: {
+		children: 'Text',
+		disabled: true,
+		theme: ButtonTheme.SUBMIT,
+	},
+};
+DisabledDark.decorators = [ThemeDecorator(Theme.DARK)];

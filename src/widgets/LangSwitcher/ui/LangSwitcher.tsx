@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Button, ButtonTheme } from 'shared/ui/Button/ui/Button';
+import { Button, ButtonTheme } from 'shared/ui/Button';
 import { SvgIcon } from 'shared/ui/SvgIcon/ui/SvgIcon';
 import LangIcon from 'shared/assets/lang.svg';
 

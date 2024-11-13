@@ -13,5 +13,8 @@
 	"Search by Address": "Поиск по Адрес",
 	"Enter text": "Введите текст",
 	"Enter username": "Введите имя пользователя",
-	"Enter password": "Введите пароль"
+	"Enter password": "Введите пароль",
+	"Authorization form": "Форма авторизации",
+	"You entered an incorrect username or password": "Вы ввели неправильный логин или пароль",
+	"Log out": "Выйти"
 }

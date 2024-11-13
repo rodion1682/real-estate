@@ -3,7 +3,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { counterActions } from '../model/slice/counterSlice';
 import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui/Button/ui/Button';
+import { Button } from 'shared/ui/Button';
 
 interface CounterProps {
 	className?: string;

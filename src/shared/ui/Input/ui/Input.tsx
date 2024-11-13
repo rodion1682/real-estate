@@ -12,7 +12,7 @@ import { SvgIcon } from 'shared/ui/SvgIcon/ui/SvgIcon';
 import SearchIcon from 'shared/assets/search.svg';
 import EyeIcon from 'shared/assets/eye.svg';
 import EyeSlashIcon from 'shared/assets/eye-slash.svg';
-import { Button, ButtonTheme } from 'shared/ui/Button/ui/Button';
+import { Button, ButtonTheme } from 'shared/ui/Button';
 
 export enum InputTheme {
 	MAIN_INPUT = 'main_input',
