@@ -74,6 +74,7 @@ export default [
 			// TypeScript rules
 			'@typescript-eslint/ban-ts-comment': 'warn',
 			'@typescript-eslint/no-unused-vars': 'warn',
+			'@typescript-eslint/no-explicit-any': 'warn',
 
 			// Import rules
 			'import/no-unresolved': 'off',
