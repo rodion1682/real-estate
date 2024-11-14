@@ -7,7 +7,9 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDeco
 const meta = {
 	title: 'features/LoginForm',
 	component: LoginForm,
-	args: {},
+	args: {
+		onSuccess: () => {},
+	},
 } satisfies Meta<typeof LoginForm>;
 
 export default meta;

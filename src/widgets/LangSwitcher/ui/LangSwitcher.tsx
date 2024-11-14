@@ -3,12 +3,13 @@ import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { SvgIcon } from 'shared/ui/SvgIcon/ui/SvgIcon';
 import LangIcon from 'shared/assets/lang.svg';
+import { memo } from 'react';
 
 interface LangSwitcherProps {
 	className?: string;
 }
 
-export const LangSwitcher = ({ className }: LangSwitcherProps) => {
+export const LangSwitcher = memo(({ className }: LangSwitcherProps) => {
 	const { t, i18n } = useTranslation();
 	const toggleLanguage = () => {
 		i18n.changeLanguage(i18n.language === 'en' ? 'ru' : 'en');
@@ -24,4 +25,4 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
 			<span>{t('Language')}</span>
 		</Button>
 	);
-};
+});

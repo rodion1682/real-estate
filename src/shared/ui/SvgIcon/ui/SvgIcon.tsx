@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import cls from './SvgIcon.module.scss';
-import { ReactNode } from 'react';
+import { memo, ReactNode } from 'react';
 
 export enum SvgIconThemes {
 	NAVBAR_THEME = 'navbar_theme',
@@ -13,11 +13,11 @@ interface SvgIconProps {
 	theme?: SvgIconThemes;
 }
 
-export const SvgIcon = (props: SvgIconProps) => {
+export const SvgIcon = memo((props: SvgIconProps) => {
 	const { className, children, theme = SvgIconThemes.NAVBAR_THEME } = props;
 	return (
 		<div className={classNames(cls.SvgIcon, {}, [className, cls[theme]])}>
 			{children}
 		</div>
 	);
-};
+});

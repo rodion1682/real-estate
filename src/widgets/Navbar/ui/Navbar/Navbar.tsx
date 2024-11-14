@@ -1,22 +1,21 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import cls from './Navbar.module.scss';
-import { AppLink } from 'shared/ui/AppLink';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
-
 import { useTranslation } from 'react-i18next';
-import { useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { Button } from 'shared/ui/Button';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
+import { NavbarItemsList } from 'widgets/Navbar/model/items';
+import { NavbarItem } from '../NavbarItem/NavbarItem';
 
 interface NavbarProps {
 	className?: string;
 }
 
-export const Navbar = ({ className }: NavbarProps) => {
+export const Navbar = memo(({ className }: NavbarProps) => {
 	const { t } = useTranslation('');
 	const [isAuthModal, setIsAuthModal] = useState(false);
 	const authData = useSelector(getUserAuthData);
@@ -31,40 +30,29 @@ export const Navbar = ({ className }: NavbarProps) => {
 	const onLogout = useCallback(() => {
 		dispatch(userActions.logout());
 	}, [dispatch]);
-	if (authData) {
-		return (
-			<div
-				className={classNames(cls.Navbar, {}, [className])}
-				data-testid="navbar"
-			>
-				<div className={cls.Navbar__actions}>
-					<AppLink to={RoutePath.main}>{t('Main page')}</AppLink>
-					<AppLink to={RoutePath.apartment}>
-						{t('Apartament page')}
-					</AppLink>
-					<ThemeSwitcher className={cls.Navbar__theme} />
-					<LangSwitcher />
-					<Button onClick={onLogout}>{t('Log out')}</Button>
-					<LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
-				</div>
-			</div>
-		);
-	}
+
 	return (
 		<div
 			className={classNames(cls.Navbar, {}, [className])}
 			data-testid="navbar"
 		>
 			<div className={cls.Navbar__actions}>
-				<AppLink to={RoutePath.main}>{t('Main page')}</AppLink>
-				<AppLink to={RoutePath.apartment}>{t('Apartament page')}</AppLink>
+				{NavbarItemsList.map((item) => (
+					<NavbarItem item={item} key={item.path} />
+				))}
 				<ThemeSwitcher className={cls.Navbar__theme} />
 				<LangSwitcher />
-				<Button onClick={onOpenModal}>{t('Sing in')}</Button>
-				{isAuthModal && (
-					<LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+				{authData ? (
+					<Button onClick={onLogout}>{t('Log out')}</Button>
+				) : (
+					<>
+						<Button onClick={onOpenModal}>{t('Sing in')}</Button>
+						{isAuthModal && (
+							<LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+						)}
+					</>
 				)}
 			</div>
 		</div>
 	);
-};
+});

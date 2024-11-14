@@ -4,10 +4,14 @@ import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
 import { userReducer } from 'entities/User';
 import { createReducerManager } from './reducerManager';
 
-export function createReduxStore(initialState?: StateScheme) {
+export function createReduxStore(
+	initialState?: StateScheme,
+	asyncReducers?: ReducersMapObject<StateScheme>
+) {
 	const rootReducers: ReducersMapObject<StateScheme> = {
 		counter: counterReducer,
 		user: userReducer,
+		...asyncReducers,
 	};
 
 	const reducerManager = createReducerManager(rootReducers);

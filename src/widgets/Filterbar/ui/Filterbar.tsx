@@ -3,14 +3,14 @@ import cls from './Filterbar.module.scss';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import { InputTheme } from 'shared/ui/Input/ui/Input';
 
 interface FilterbarProps {
 	className?: string;
 }
 
-export const Filterbar = ({ className }: FilterbarProps) => {
+export const Filterbar = memo(({ className }: FilterbarProps) => {
 	const { t } = useTranslation();
 	const [inputValue, setInputValue] = useState('');
 	const onChange = (val: string) => {
@@ -33,4 +33,4 @@ export const Filterbar = ({ className }: FilterbarProps) => {
 			</div>
 		</div>
 	);
-};
+});

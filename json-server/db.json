@@ -25,5 +25,14 @@
 			"password": "123"
 		}
 	],
-	"profile": { "name": "typicode" }
+	"profile": {
+		"first": "Rodions",
+		"lastname": "Tropkins",
+		"age": 24,
+		"currency": "EUR",
+		"country": "Latvia",
+		"city": "Riga",
+		"username": "admin",
+		"avatar": "https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png"
+	}
 }

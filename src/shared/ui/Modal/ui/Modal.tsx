@@ -1,17 +1,17 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Modal.module.scss';
-import { FC, ReactNode, useCallback, useEffect, useState } from 'react';
+import { ReactNode, useCallback, useEffect, useState } from 'react';
 import { Portal } from 'shared/ui/Portal';
 
 interface ModalProps {
 	className?: string;
 	isOpen?: boolean;
-	onClose?: (isOpen: boolean) => void;
+	onClose?: () => void;
 	children?: ReactNode;
 	lazy?: boolean;
 }
 
-export const Modal: FC<ModalProps> = (props) => {
+export const Modal = (props: ModalProps) => {
 	const { className, isOpen, onClose, children, lazy } = props;
 	const [isMounted, setIsMounted] = useState(false);
 
@@ -22,7 +22,9 @@ export const Modal: FC<ModalProps> = (props) => {
 	}, [isOpen]);
 
 	const closeHandler = useCallback(() => {
-		onClose(false);
+		if (onClose) {
+			onClose();
+		}
 	}, [onClose]);
 
 	const onContentClick = (e: React.MouseEvent) => {

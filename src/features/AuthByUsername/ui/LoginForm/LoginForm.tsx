@@ -3,14 +3,12 @@ import { useTranslation } from 'react-i18next';
 import cls from './LoginForm.module.scss';
 import { Input } from 'shared/ui/Input';
 import { InputTheme, InputType } from 'shared/ui/Input/ui/Input';
-import { useDispatch, useSelector, useStore } from 'react-redux';
-import { memo, useCallback, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { memo, useCallback } from 'react';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
-import { AppDispatch } from 'app/providers/StoreProvider/config/store';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { Text, TextTheme } from 'shared/ui/Text';
-import { ReduxStoreWithManager } from 'app/providers/StoreProvider';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
@@ -19,33 +17,24 @@ import {
 	DynamicModuleLoader,
 	ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 export interface LoginFormProps {
 	className?: string;
+	onSuccess: () => void;
 }
 
 const initialReducers: ReducersList = {
 	loginForm: loginReducer,
 };
 
-const LoginForm = memo(({ className }: LoginFormProps) => {
+const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
 	const { t } = useTranslation();
-	const dispatch = useDispatch<AppDispatch>();
-	const store = useStore() as ReduxStoreWithManager;
+	const dispatch = useAppDispatch();
 	const username = useSelector(getLoginUsername);
 	const password = useSelector(getLoginPassword);
 	const isLoading = useSelector(getLoginIsLoading);
 	const error = useSelector(getLoginError);
-
-	useEffect(() => {
-		store.reducerManager.add('loginForm', loginReducer);
-		dispatch({ type: '@INIT loginForm reducer' });
-		return () => {
-			store.reducerManager.remove('loginForm');
-			dispatch({ type: '@DESTROY loginForm reducer' });
-		};
-		//eslint-disable-next-line
-	}, []);
 
 	const onChangeUserName = useCallback(
 		(value: string) => {
@@ -59,9 +48,12 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
 		},
 		[dispatch]
 	);
-	const onLoginClick = useCallback(() => {
-		dispatch(loginByUsername({ username, password }));
-	}, [dispatch, username, password]);
+	const onLoginClick = useCallback(async () => {
+		const reslut = await dispatch(loginByUsername({ username, password }));
+		if (reslut.meta.requestStatus === 'fulfilled') {
+			onSuccess();
+		}
+	}, [onSuccess, dispatch, username, password]);
 
 	return (
 		<DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
