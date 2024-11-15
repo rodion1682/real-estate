@@ -9,6 +9,7 @@ import { userActions } from 'entities/User';
 const App = () => {
 	const { theme } = useTheme();
 	const dispatch = useDispatch();
+
 	document.body.className = theme;
 
 	useEffect(() => {

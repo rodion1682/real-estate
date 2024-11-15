@@ -7,16 +7,19 @@ import { StoreProvider } from 'app/providers/StoreProvider';
 import 'app/styles/index.scss';
 import 'shared/config/i18n/i18n';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const rootElement = document.getElementById('root');
 
-root.render(
-	<StoreProvider>
+if (rootElement) {
+	const root = ReactDOM.createRoot(rootElement);
+	root.render(
 		<BrowserRouter>
-			<ErrorBoundary>
-				<ThemeProvider>
-					<App />
-				</ThemeProvider>
-			</ErrorBoundary>
+			<StoreProvider>
+				<ErrorBoundary>
+					<ThemeProvider>
+						<App />
+					</ThemeProvider>
+				</ErrorBoundary>
+			</StoreProvider>
 		</BrowserRouter>
-	</StoreProvider>
-);
+	);
+}

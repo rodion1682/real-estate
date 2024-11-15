@@ -14,12 +14,14 @@ interface NavbarItemProps {
 export const NavbarItem = memo(({ className, item }: NavbarItemProps) => {
 	const { t } = useTranslation();
 	return (
-		<AppLink
-			to={item.path}
-			className={classNames(cls.NavbarItem, {}, [className])}
-		>
-			{item.Icon && <SvgIcon children={<item.Icon />} />}
-			<span className={cls.link}>{t(item.text)}</span>
-		</AppLink>
+		item && (
+			<AppLink
+				to={item.path}
+				className={classNames(cls.NavbarItem, {}, [className])}
+			>
+				{item.Icon && <SvgIcon children={<item.Icon />} />}
+				<span className={cls.link}>{t(item.text)}</span>
+			</AppLink>
+		)
 	);
 });

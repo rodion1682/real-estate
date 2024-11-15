@@ -1,0 +1,20 @@
+.ProfileCard {
+	border: 1px solid var(--primary-color);
+	border-radius: var(--border-radius);
+	padding: 15px;
+
+	&__top {
+		&:not(:last-child) {
+			margin: 0 0 20px 0;
+		}
+	}
+
+	&__data {
+	}
+
+	&__input {
+		&:not(:last-child) {
+			margin: 0 0 10px 0;
+		}
+	}
+}

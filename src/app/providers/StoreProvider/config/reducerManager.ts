@@ -25,7 +25,7 @@ export function createReducerManager(
 				});
 				keysToRemove = [];
 			}
-			return combinedReducer(state, action);
+			return combinedReducer(state as any, action);
 		},
 		add: (key: StateSchemeKey, reducer: Reducer) => {
 			if (!key || reducers[key]) {

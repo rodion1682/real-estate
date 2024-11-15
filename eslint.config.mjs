@@ -13,6 +13,7 @@ const languageOptions = {
 	globals: {
 		...globals.browser,
 		__IS_DEV__: true,
+		__API__: true,
 	},
 	ecmaVersion: 'latest',
 	sourceType: 'module',

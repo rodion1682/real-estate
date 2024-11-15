@@ -17,16 +17,16 @@ export function componentRender(
 	const { route = '/', initialState } = options;
 
 	return render(
-		<StoreProvider initialState={initialState}>
-			<MemoryRouter
-				future={{
-					v7_startTransition: true,
-					v7_relativeSplatPath: true,
-				}}
-				initialEntries={[route]}
-			>
+		<MemoryRouter
+			future={{
+				v7_startTransition: true,
+				v7_relativeSplatPath: true,
+			}}
+			initialEntries={[route]}
+		>
+			<StoreProvider initialState={initialState}>
 				<I18nextProvider i18n={i18nForTests}>{component}</I18nextProvider>,
-			</MemoryRouter>
-		</StoreProvider>
+			</StoreProvider>
+		</MemoryRouter>
 	);
 }
