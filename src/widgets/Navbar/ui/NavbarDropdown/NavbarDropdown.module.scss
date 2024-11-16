@@ -1,0 +1,32 @@
+.NavbarDropdown {
+	position: relative;
+
+	&__dropdown {
+		background-color: var(--bg-color-secondray);
+		border-radius: var(--border-radius);
+		height: 1;
+		left: 0;
+		opacity: 0;
+		padding: 15px;
+		pointer-events: none;
+		position: absolute;
+		top: 100%;
+		transform: translate(0, 20px);
+		transition: opacity 0.3s ease 0s;
+		visibility: hidden;
+		width: 200px;
+		z-index: 1;
+
+		&_open {
+			opacity: 1;
+			pointer-events: auto;
+			visibility: visible;
+		}
+	}
+
+	&__link {
+		&:not(:last-child) {
+			margin: 0 0 10px 0;
+		}
+	}
+}

@@ -84,3 +84,11 @@
 		}
 	}
 }
+
+.active {
+	background-color: var(--bg-color);
+}
+
+.borderActive {
+	border: 1px solid var(--hint-color);
+}
