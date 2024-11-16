@@ -5,12 +5,14 @@ import { memo, ReactNode } from 'react';
 
 export enum AppLinkTheme {
 	NAVBAR = 'navbar',
+	PROFILE = 'profile',
 }
 
 interface AppLinkProps extends LinkProps {
 	className?: string;
 	theme?: AppLinkTheme;
 	children?: ReactNode;
+	active?: boolean;
 }
 
 export const AppLink = memo((props: AppLinkProps) => {
@@ -18,12 +20,16 @@ export const AppLink = memo((props: AppLinkProps) => {
 		className,
 		to,
 		children,
+		active,
 		theme = AppLinkTheme.NAVBAR,
 		...otherProps
 	} = props;
 	return (
 		<Link
-			className={classNames(cls.AppLink, {}, [className, cls[theme]])}
+			className={classNames(cls.AppLink, { [cls.active]: active }, [
+				className,
+				cls[theme],
+			])}
 			to={to}
 			{...otherProps}
 		>

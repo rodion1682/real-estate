@@ -1,15 +1,32 @@
 .ProfileCard {
-	border: 1px solid var(--primary-color);
+	background-color: var(--bg-color-secondray);
 	border-radius: var(--border-radius);
+	margin: 0 auto;
 	padding: 15px;
 
-	&__top {
+	&__loading {
+		align-items: center;
+		border: 1px solid transparent;
+		display: flex;
+		justify-content: center;
+	}
+
+	&__label {
 		&:not(:last-child) {
-			margin: 0 0 20px 0;
+			margin: 0 0 5px 0;
 		}
 	}
 
+	&__error {
+	}
+
 	&__data {
+	}
+
+	&__inner {
+		&:not(:last-child) {
+			margin: 0 0 20px 0;
+		}
 	}
 
 	&__input {

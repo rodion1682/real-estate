@@ -5,6 +5,7 @@
 		"selector-class-pattern": null,
 		"shorthand-property-no-redundant-values": null,
 		"block-no-empty": null,
-		"order/properties-alphabetical-order": true
+		"order/properties-alphabetical-order": true,
+		"no-descending-specificity": null
 	}
 }

@@ -10,7 +10,10 @@
 		font-weight: 600;
 		height: var(--input-height);
 		letter-spacing: var(--letter-spacing);
+		opacity: 1;
 		outline: transparent;
+		pointer-events: auto;
+		transition: all 0.3s ease 0s;
 		width: 100%;
 
 		&::placeholder {
@@ -20,6 +23,8 @@
 		}
 
 		&:focus {
+			border: 1px solid var(--hint-color);
+
 			&::placeholder {
 				color: transparent;
 			}
@@ -57,5 +62,12 @@
 .search_input {
 	input {
 		padding: 0 15px 0 40px;
+	}
+}
+
+.readonly {
+	input {
+		opacity: 0.5;
+		pointer-events: none;
 	}
 }

@@ -1,0 +1,13 @@
+.ProfilePageSidebar {
+	background-color: var(--bg-color-secondray);
+	border-radius: var(--border-radius);
+	display: flex;
+	flex-direction: column;
+	padding: 15px;
+
+	&__link {
+		&:not(:last-child) {
+			margin: 0 0 10px 0;
+		}
+	}
+}

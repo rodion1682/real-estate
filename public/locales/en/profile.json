@@ -2,5 +2,12 @@
 	"Profile": "Profile",
 	"Edit profile": "Edit profile",
 	"Your name": "Your name",
-	"Your surname": "Your surname"
+	"Your surname": "Your surname",
+	"An error occurred while loading the user": "An error occurred while loading the user",
+	"Try refreshing the page": "Try refreshing the page",
+	"Cancel editing": "Cancel editing",
+	"Save changes": "Save changes",
+	"Your city": "Your city",
+	"Profile favorites": "Profile favorites",
+	"My objects": "My objects"
 }

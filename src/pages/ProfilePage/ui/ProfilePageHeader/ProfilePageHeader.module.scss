@@ -1,0 +1,15 @@
+.ProfilePageHeader {
+	align-items: center;
+	display: flex;
+	gap: 20px;
+	justify-content: space-between;
+
+	&:not(:last-child) {
+		margin: 0 0 20px 0;
+	}
+
+	&__actions {
+		display: flex;
+		gap: 20px;
+	}
+}

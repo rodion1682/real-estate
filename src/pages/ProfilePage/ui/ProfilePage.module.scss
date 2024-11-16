@@ -1,4 +1,19 @@
 .ProfilePage {
 	display: flex;
-	justify-content: center;
+	gap: 30px;
+	height: calc(100vh - var(--navbar-height));
+	padding: 15px;
+	position: relative;
+
+	&__sidebar {
+		flex: 0 0 300px;
+	}
+
+	&__content {
+		flex: 1 1 auto;
+	}
+
+	&__loader {
+		min-height: calc(100vh - (var(--navbar-height) + 15px));
+	}
 }

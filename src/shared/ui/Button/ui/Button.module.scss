@@ -6,7 +6,8 @@
 .main_button,
 .theme_switcher,
 .lang_switcher,
-.submit {
+.submit,
+.cancel {
 	align-items: center;
 	border: 1px solid var(--primary-color);
 	border-radius: var(--border-radius);
@@ -17,17 +18,13 @@
 	height: 100%;
 	justify-content: center;
 	letter-spacing: var(--letter-spacing);
+	padding: 8px 15px;
 
 	@media (any-hover: hover) {
 		&:hover {
 			background-color: var(--bg-color);
 		}
 	}
-}
-
-.main_button,
-.submit {
-	padding: 8px 15px;
 }
 
 .theme_switcher {
@@ -73,6 +70,17 @@
 	@media (any-hover: hover) {
 		&:hover {
 			background-color: var(--hint-hover-color);
+		}
+	}
+}
+
+.cancel {
+	border: 1px solid var(--red-light);
+	transition: border 0.3s ease 0s;
+
+	@media (any-hover: hover) {
+		&:hover {
+			border: 1px solid var(--red-dark);
 		}
 	}
 }

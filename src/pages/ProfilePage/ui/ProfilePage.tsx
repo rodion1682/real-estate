@@ -1,39 +1,28 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
 import cls from './ProfilePage.module.scss';
-import { memo, useEffect } from 'react';
-import {
-	DynamicModuleLoader,
-	ReducersList,
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import {
-	fetchProfileData,
-	ProfileCard,
-	profileReducer,
-} from 'entities/Profile';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { memo, Suspense } from 'react';
 
-const reducers: ReducersList = {
-	profile: profileReducer,
-};
+import { Outlet } from 'react-router-dom';
+import { ProfilePageSidebar } from './ProfilePageSidebar/ProfilePageSidebar';
+import { Loader } from 'shared/ui/Loader';
+import { PageLoader } from 'widgets/PageLoader';
 
 interface ProfilePageProps {
 	className?: string;
 }
 
 const ProfilePage = memo(({ className }: ProfilePageProps) => {
-	const { t } = useTranslation();
-	const dispatch = useAppDispatch();
-	useEffect(() => {
-		dispatch(fetchProfileData());
-	}, [dispatch]);
-
 	return (
-		<DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-			<div className={classNames(cls.ProfilePage, {}, [className])}>
-				<ProfileCard />
+		<div className={classNames(cls.ProfilePage, {}, [className])}>
+			<ProfilePageSidebar className={cls.ProfilePage__sidebar} />
+			<div className={cls.ProfilePage__content}>
+				<Suspense
+					fallback={<PageLoader className={cls.ProfilePage__loader} />}
+				>
+					<Outlet />
+				</Suspense>
 			</div>
-		</DynamicModuleLoader>
+		</div>
 	);
 });
 

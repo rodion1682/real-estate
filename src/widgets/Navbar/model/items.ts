@@ -17,9 +17,4 @@ export const NavbarItemsList: NavbarItemType[] = [
 		path: RoutePath.apartment,
 		text: 'Apartament page',
 	},
-	{
-		path: RoutePath.profile,
-		Icon: HeartIcon,
-		text: 'Profile page',
-	},
 ];

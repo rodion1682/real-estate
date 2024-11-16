@@ -1,38 +1,38 @@
 {
-	"posts": [
-		{
-			"id": "1",
-			"title": "json-server",
-			"userId": "1"
-		},
-		{
-			"id": "2",
-			"title": "json-server",
-			"userId": "2"
-		}
-	],
-	"comments": [
-		{
-			"id": "1",
-			"body": "some comment",
-			"postId": "1"
-		}
-	],
-	"users": [
-		{
-			"id": "1",
-			"username": "admin",
-			"password": "123"
-		}
-	],
-	"profile": {
-		"first": "Rodions",
-		"lastname": "Tropkins",
-		"age": 24,
-		"currency": "EUR",
-		"country": "Latvia",
-		"city": "Riga",
-		"username": "admin",
-		"avatar": "https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png"
-	}
+  "posts": [
+    {
+      "id": "1",
+      "title": "json-server",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "json-server",
+      "userId": "2"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123"
+    }
+  ],
+  "profile": {
+    "first": "asdasda",
+    "lastname": "aa34",
+    "age": 241,
+    "currency": "EUR",
+    "country": "Latvia",
+    "city": "Rigas",
+    "username": "admin",
+    "avatar": "https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png"
+  }
 }

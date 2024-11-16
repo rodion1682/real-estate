@@ -27,16 +27,17 @@ export enum InputType {
 
 type HTMLInputProps = Omit<
 	InputHTMLAttributes<HTMLInputElement>,
-	'value' | 'onChange'
+	'value' | 'onChange' | 'readonly'
 >;
 
 interface InputProps extends HTMLInputProps {
 	className?: string;
-	value?: string;
+	value?: string | number;
 	onChange?: (value: string) => void;
 	type?: InputType;
 	placeholder?: string;
 	theme?: InputTheme;
+	readonly?: boolean;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -48,6 +49,7 @@ export const Input = memo((props: InputProps) => {
 		placeholder = t('Enter text'),
 		type = InputType.TEXT,
 		theme = InputTheme.MAIN_INPUT,
+		readonly,
 		...otherProps
 	} = props;
 	const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -67,7 +69,12 @@ export const Input = memo((props: InputProps) => {
 	};
 
 	return (
-		<div className={classNames(cls.Input, {}, [className, cls[theme]])}>
+		<div
+			className={classNames(cls.Input, { [cls.readonly]: readonly }, [
+				className,
+				cls[theme],
+			])}
+		>
 			{theme === InputTheme.SEARCH_INPUT && (
 				<SvgIcon className={cls.Input__icon} children={<SearchIcon />} />
 			)}
@@ -82,6 +89,7 @@ export const Input = memo((props: InputProps) => {
 				value={value}
 				onChange={onChangeHandler}
 				placeholder={placeholder}
+				readOnly={readonly}
 				{...otherProps}
 			/>
 			{isPassword && (

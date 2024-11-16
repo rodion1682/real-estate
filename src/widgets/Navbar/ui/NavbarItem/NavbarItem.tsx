@@ -5,6 +5,7 @@ import { AppLink } from 'shared/ui/AppLink';
 import { NavbarItemType } from 'widgets/Navbar/model/items';
 import { SvgIcon } from 'shared/ui/SvgIcon/ui/SvgIcon';
 import { memo } from 'react';
+import { useLocation } from 'react-router-dom';
 
 interface NavbarItemProps {
 	className?: string;
@@ -13,9 +14,12 @@ interface NavbarItemProps {
 
 export const NavbarItem = memo(({ className, item }: NavbarItemProps) => {
 	const { t } = useTranslation();
+	const location = useLocation();
+
 	return (
 		item && (
 			<AppLink
+				active={location.pathname === item.path}
 				to={item.path}
 				className={classNames(cls.NavbarItem, {}, [className])}
 			>
