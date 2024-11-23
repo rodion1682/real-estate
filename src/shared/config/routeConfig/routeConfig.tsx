@@ -3,9 +3,13 @@ import { ApartmentPage } from 'pages/ApartmentPage';
 import { NotFoundPage } from 'pages/NotFound';
 import { RouteProps } from 'react-router-dom';
 import { ProfilePage } from 'pages/ProfilePage';
-import { ProfileFavorite } from 'pages/ProfileFavorite';
-import { ProfileMyObjects } from 'pages/ProfileMyObjects';
-import { ProfileSettings } from 'pages/ProfileSettings';
+import { ProfileFavorite } from 'pages/ProfilePage/ProfileFavorite';
+import { ProfileMyObjects } from 'pages/ProfilePage/ProfileMyObjects';
+import { ProfileSettings } from 'pages/ProfilePage/ProfileSettings';
+
+type AppRoutesProps = RouteProps & {
+	authOnly?: boolean;
+};
 
 export enum AppRoutes {
 	MAIN = 'main',
@@ -27,7 +31,7 @@ export const RoutePath: Record<AppRoutes, string> = {
 	[AppRoutes.NOT_FOUND]: '*',
 };
 
-export const routeConfig: Record<AppRoutes, RouteProps> = {
+export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
 	[AppRoutes.MAIN]: {
 		path: RoutePath.main,
 		element: <MainPage />,
@@ -39,6 +43,7 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
 	[AppRoutes.PROFILE]: {
 		path: RoutePath.profile,
 		element: <ProfilePage />,
+		authOnly: true,
 	},
 	[AppRoutes.NOT_FOUND]: {
 		path: RoutePath.not_found,
@@ -52,17 +57,20 @@ export const ProfileRoutePath: Record<ProfileRoutes, string> = {
 	[ProfileRoutes.SETTINGS]: '/profile/settings',
 };
 
-export const profileRouteConfig: Record<ProfileRoutes, RouteProps> = {
+export const profileRouteConfig: Record<ProfileRoutes, AppRoutesProps> = {
 	[ProfileRoutes.FAVORITE]: {
 		path: ProfileRoutePath.favorite,
 		element: <ProfileFavorite />,
+		authOnly: true,
 	},
 	[ProfileRoutes.MY_OBJECTS]: {
 		path: ProfileRoutePath.my_objects,
 		element: <ProfileMyObjects />,
+		authOnly: true,
 	},
 	[ProfileRoutes.SETTINGS]: {
 		path: ProfileRoutePath.settings,
 		element: <ProfileSettings />,
+		authOnly: true,
 	},
 };

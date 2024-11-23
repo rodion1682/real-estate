@@ -14,4 +14,10 @@
 	&__theme {
 		padding: 0 10px 0 6px;
 	}
+
+	&__links {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
 }

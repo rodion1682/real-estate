@@ -1,8 +1,25 @@
 .ProfileCard {
 	background-color: var(--bg-color-secondray);
+	border: 1px solid transparent;
 	border-radius: var(--border-radius);
 	margin: 0 auto;
 	padding: 15px;
+	transition: border 0.3s ease 0s;
+
+	&_editing {
+		border: 1px solid var(--primary-color);
+	}
+
+	&__inner {
+		&:not(:last-child) {
+			margin: 0 0 20px 0;
+		}
+
+		&_avatar {
+			display: flex;
+			gap: 20px;
+		}
+	}
 
 	&__loading {
 		align-items: center;
@@ -11,22 +28,21 @@
 		justify-content: center;
 	}
 
-	&__label {
+	&__content {
+		flex: 1 1 auto;
+
 		&:not(:last-child) {
 			margin: 0 0 5px 0;
 		}
+	}
+
+	&__label {
 	}
 
 	&__error {
 	}
 
 	&__data {
-	}
-
-	&__inner {
-		&:not(:last-child) {
-			margin: 0 0 20px 0;
-		}
 	}
 
 	&__input {

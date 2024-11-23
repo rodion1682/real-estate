@@ -1,0 +1,13 @@
+.Avatar {
+	border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+
+	img {
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+}

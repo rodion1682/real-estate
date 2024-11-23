@@ -9,45 +9,47 @@ import {
 	profileActions,
 	updateProfileData,
 } from 'entities/Profile';
-import { useCallback } from 'react';
+import { memo, useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 interface ProfilePageHeaderProps {
 	className?: string;
 }
 
-export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
-	const { t } = useTranslation('profile');
-	const readonly = useSelector(getProfileReadOnly);
-	const dispatch = useAppDispatch();
+export const ProfilePageHeader = memo(
+	({ className }: ProfilePageHeaderProps) => {
+		const { t } = useTranslation('profile');
+		const readonly = useSelector(getProfileReadOnly);
+		const dispatch = useAppDispatch();
 
-	const onEdit = useCallback(() => {
-		dispatch(profileActions.setReadonly(false));
-	}, [dispatch]);
+		const onEdit = useCallback(() => {
+			dispatch(profileActions.setReadonly(false));
+		}, [dispatch]);
 
-	const onCancelEdit = useCallback(() => {
-		dispatch(profileActions.cancelEdit());
-	}, [dispatch]);
+		const onCancelEdit = useCallback(() => {
+			dispatch(profileActions.cancelEdit());
+		}, [dispatch]);
 
-	const onSave = useCallback(() => {
-		dispatch(updateProfileData());
-	}, [dispatch]);
+		const onSave = useCallback(() => {
+			dispatch(updateProfileData());
+		}, [dispatch]);
 
-	return (
-		<div className={classNames(cls.ProfilePageHeader, {}, [className])}>
-			<Text title={t('Profile')} />
-			{readonly ? (
-				<Button onClick={onEdit}>{t('Edit profile')}</Button>
-			) : (
-				<div className={cls.ProfilePageHeader__actions}>
-					<Button onClick={onSave} theme={ButtonTheme.SUBMIT}>
-						{t('Save changes')}
-					</Button>
-					<Button onClick={onCancelEdit} theme={ButtonTheme.CANCEL}>
-						{t('Cancel editing')}
-					</Button>
-				</div>
-			)}
-		</div>
-	);
-};
+		return (
+			<div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+				<Text title={t('Profile')} />
+				{readonly ? (
+					<Button onClick={onEdit}>{t('Edit profile')}</Button>
+				) : (
+					<div className={cls.ProfilePageHeader__actions}>
+						<Button onClick={onSave} theme={ButtonTheme.SUBMIT}>
+							{t('Save changes')}
+						</Button>
+						<Button onClick={onCancelEdit} theme={ButtonTheme.CANCEL}>
+							{t('Cancel editing')}
+						</Button>
+					</div>
+				)}
+			</div>
+		);
+	}
+);

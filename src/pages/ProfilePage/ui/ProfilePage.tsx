@@ -4,7 +4,6 @@ import { memo, Suspense } from 'react';
 
 import { Outlet } from 'react-router-dom';
 import { ProfilePageSidebar } from './ProfilePageSidebar/ProfilePageSidebar';
-import { Loader } from 'shared/ui/Loader';
 import { PageLoader } from 'widgets/PageLoader';
 
 interface ProfilePageProps {

@@ -119,3 +119,35 @@ export const DisabledDark: Story = {
 	},
 };
 DisabledDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Dropdown: Story = {
+	args: {
+		children: 'Text',
+		theme: ButtonTheme.DROPDOWN,
+	},
+};
+
+export const DropdownOpen: Story = {
+	args: {
+		children: 'Text',
+		open: true,
+		theme: ButtonTheme.DROPDOWN,
+	},
+};
+
+export const DropdownDark: Story = {
+	args: {
+		children: 'Text',
+		theme: ButtonTheme.DROPDOWN,
+	},
+};
+DropdownDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const DropdownOpenDark: Story = {
+	args: {
+		children: 'Text',
+		open: true,
+		theme: ButtonTheme.DROPDOWN,
+	},
+};
+DropdownOpenDark.decorators = [ThemeDecorator(Theme.DARK)];

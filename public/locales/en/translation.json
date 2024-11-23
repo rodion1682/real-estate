@@ -16,7 +16,11 @@
 	"Authorization form": "Authorization form",
 	"You entered an incorrect username or password": "You entered an incorrect username or password",
 	"Log out": "Log out",
+	"Profile page": "Profile page",
 	"Favorites": "Favorites",
 	"My objects": "My objects",
-	"Profile settings": "Profile settings"
+	"Profile settings": "Profile settings",
+	"Price": "Price",
+	"From": "From",
+	"To": "To"
 }

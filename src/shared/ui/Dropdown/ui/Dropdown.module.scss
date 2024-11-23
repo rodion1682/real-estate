@@ -1,0 +1,15 @@
+.Dropdown {
+	position: relative;
+
+	&__items {
+		background-color: var(--bg-color-secondray);
+		border-radius: var(--border-radius);
+		color: var(--primary-color);
+		max-width: 290px;
+		min-width: 290px;
+		padding: 15px;
+		position: absolute;
+		top: calc(100% + 10px);
+		z-index: var(--dropdown-z-index);
+	}
+}

@@ -1,11 +1,9 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
 import cls from './ProfileSettings.module.scss';
 import {
 	DynamicModuleLoader,
 	ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { ProfilePageSidebar } from 'pages/ProfilePage/ui/ProfilePageSidebar/ProfilePageSidebar';
 import { ProfilePageHeader } from 'pages/ProfilePage/ui/ProfilePageHeader/ProfilePageHeader';
 import {
 	fetchProfileData,
@@ -16,7 +14,7 @@ import {
 	ProfileCard,
 	profileReducer,
 } from 'entities/Profile';
-import { useCallback, useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getProfileForm } from 'entities/Profile/model/selectors/getProfileForm/getProfileForm';
@@ -29,8 +27,7 @@ interface ProfileSettingsProps {
 	className?: string;
 }
 
-const ProfileSettings = ({ className }: ProfileSettingsProps) => {
-	const { t } = useTranslation();
+const ProfileSettings = memo(({ className }: ProfileSettingsProps) => {
 	const dispatch = useAppDispatch();
 	const formData = useSelector(getProfileForm);
 	const isLoading = useSelector(getProfileIsLoading);
@@ -68,6 +65,15 @@ const ProfileSettings = ({ className }: ProfileSettingsProps) => {
 		},
 		[dispatch]
 	);
+	const onChangeAvatar = useCallback(
+		(value?: string) => {
+			if (!value || isNaN(Number(value))) {
+				return;
+			}
+			dispatch(profileActions.upgradeProfile({ avatar: value || '' }));
+		},
+		[dispatch]
+	);
 
 	return (
 		<DynamicModuleLoader reducers={reducers} removeAfterUnmount>
@@ -78,16 +84,17 @@ const ProfileSettings = ({ className }: ProfileSettingsProps) => {
 						data={formData}
 						isLoading={isLoading}
 						error={error}
+						readonly={readonly}
 						onChangeFirsname={onChangeFirsname}
 						onChangeSurname={onChangeSurname}
 						onChangeCity={onChangeCity}
 						onChangeAge={onChangeAge}
-						readonly={readonly}
+						onChangeAvatar={onChangeAvatar}
 					/>
 				</div>
 			</div>
 		</DynamicModuleLoader>
 	);
-};
+});
 
 export default ProfileSettings;

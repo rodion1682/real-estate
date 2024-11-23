@@ -18,6 +18,8 @@ export enum InputTheme {
 	MAIN_INPUT = 'main_input',
 	PASSWORD_INPUT = 'password_input',
 	SEARCH_INPUT = 'search_input',
+	EURO = 'euro',
+	AREA = 'area',
 }
 
 export enum InputType {

@@ -10,7 +10,7 @@ const ProfileFavorite = ({ className }: ProfileFavoriteProps) => {
 	const { t } = useTranslation('profile');
 	return (
 		<div className={classNames(cls.ProfileFavorite, {}, [className])}>
-			<div>{t('Profile favorites')}</div>
+			<div>{t('Favorite objects')}</div>
 		</div>
 	);
 };

@@ -5,6 +5,7 @@ import { memo, ReactNode } from 'react';
 
 export enum SvgIconThemes {
 	NAVBAR_THEME = 'navbar_theme',
+	SMALL = 'small',
 }
 
 interface SvgIconProps {

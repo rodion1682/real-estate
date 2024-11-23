@@ -17,7 +17,11 @@
 	"Authorization form": "Форма авторизации",
 	"You entered an incorrect username or password": "Вы ввели неправильный логин или пароль",
 	"Log out": "Выйти",
+	"Profile page": "Страница профиля",
 	"Favorites": "Избранное",
 	"My objects": "Мои объекты",
-	"Profile settings": "Настройки профиля"
+	"Profile settings": "Настройки профиля",
+	"Price": "Цена",
+	"From": "От",
+	"To": "До"
 }

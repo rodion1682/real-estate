@@ -1,6 +1,5 @@
 import React from 'react';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import HeartIcon from 'shared/assets/heart.svg';
 
 export interface NavbarItemType {
 	path: string;

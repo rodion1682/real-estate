@@ -2,6 +2,9 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 import { ButtonHTMLAttributes, ForwardedRef, memo, ReactNode } from 'react';
 
+import ChevroneIcon from 'shared/assets/chevrone.svg';
+import { SvgIcon, SvgIconThemes } from 'shared/ui/SvgIcon/ui/SvgIcon';
+
 export enum ButtonTheme {
 	MAIN_BUTTON = 'main_button',
 	THEME_SWITCHER = 'theme_switcher',
@@ -9,6 +12,7 @@ export enum ButtonTheme {
 	PASSWORD = 'password',
 	SUBMIT = 'submit',
 	CANCEL = 'cancel',
+	DROPDOWN = 'dropdown',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -17,7 +21,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	disabled?: boolean;
 	children?: ReactNode;
 	active?: boolean;
-	borderActive?: boolean;
+	open?: boolean;
 }
 
 export const Button = memo((props: ButtonProps) => {
@@ -27,13 +31,13 @@ export const Button = memo((props: ButtonProps) => {
 		theme = ButtonTheme.MAIN_BUTTON,
 		disabled,
 		active,
-		borderActive,
+		open,
 		...otherProps
 	} = props;
 	const mods = {
 		[cls.disabled]: disabled,
 		[cls.active]: active,
-		[cls.borderActive]: borderActive,
+		[cls.dropdown_open]: open,
 	};
 	return (
 		<button
@@ -43,6 +47,13 @@ export const Button = memo((props: ButtonProps) => {
 			disabled={disabled}
 		>
 			{children}
+			{theme === ButtonTheme.DROPDOWN && (
+				<SvgIcon
+					className={cls.dropdown__icon}
+					theme={SvgIconThemes.SMALL}
+					children={<ChevroneIcon />}
+				/>
+			)}
 		</button>
 	);
 });
