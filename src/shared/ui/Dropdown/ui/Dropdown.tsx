@@ -3,6 +3,7 @@ import cls from './Dropdown.module.scss';
 import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import { _slideToggle, _slideUp } from 'shared/lib/slideToggle/slideToggle';
 import { Button, ButtonTheme } from 'shared/ui/Button';
+import { useClickOutside } from 'shared/lib/useClickOutside/useClickOutside';
 
 interface DropdownProps {
 	className?: string;
@@ -17,6 +18,8 @@ export const Dropdown = (props: DropdownProps) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const dropdownList = useRef(null);
 	const dropdownRef = useRef<HTMLDivElement>(null);
+	const buttonRef = useRef<HTMLButtonElement>(null);
+	let lastExecution = 0;
 
 	const onCloseDrowdown = () => {
 		_slideUp(dropdownList.current!);
@@ -28,34 +31,23 @@ export const Dropdown = (props: DropdownProps) => {
 	}, [path]);
 
 	const toggleDropdown = useCallback(() => {
+		const now = Date.now();
+
+		if (now - lastExecution < 500) {
+			return;
+		}
+
+		lastExecution = now;
 		_slideToggle(dropdownList.current!);
 		setIsOpen((prev) => !prev);
 	}, []);
 
-	const clickOutside = useCallback(
-		(e: MouseEvent) => {
-			if (
-				isOpen &&
-				dropdownRef.current &&
-				!dropdownRef.current.contains(e.target as Node)
-			) {
-				onCloseDrowdown();
-			}
-		},
-		[isOpen]
-	);
-
-	useEffect(() => {
-		if (isOpen) {
-			setTimeout(() => {
-				window.addEventListener('click', clickOutside);
-			}, 500);
-		}
-
-		return () => {
-			window.removeEventListener('click', clickOutside);
-		};
-	}, [isOpen, clickOutside]);
+	useClickOutside({
+		target: dropdownRef.current!,
+		isOpen: isOpen,
+		onClose: onCloseDrowdown,
+		button: buttonRef.current!,
+	});
 
 	return (
 		<div
@@ -67,8 +59,9 @@ export const Dropdown = (props: DropdownProps) => {
 				open={isOpen}
 				theme={ButtonTheme.DROPDOWN}
 				active={buttonActive}
+				ref={buttonRef}
 			>
-				{label}
+				<span className={cls.Dropdown__label}>{label}</span>
 			</Button>
 			<div
 				className={classNames(cls.Dropdown__items, {}, [className])}

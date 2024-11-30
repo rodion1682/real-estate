@@ -1,6 +1,14 @@
 .Dropdown {
 	position: relative;
 
+	&__label {
+		display: flex;
+		justify-content: flex-start;
+		max-width: 290px;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+
 	&__items {
 		background-color: var(--bg-color-secondray);
 		border-radius: var(--border-radius);

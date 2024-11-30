@@ -1,0 +1,35 @@
+.Select {
+	position: relative;
+
+	&__label {
+		justify-content: space-between;
+		max-width: 290px;
+		min-width: 240px;
+
+		span {
+			display: flex;
+			justify-content: flex-start;
+			max-width: 230px;
+			overflow: hidden;
+			white-space: nowrap;
+		}
+	}
+
+	&__dropdown {
+		background-color: var(--bg-color-secondray);
+		border-radius: var(--border-radius);
+		color: var(--primary-color);
+		max-width: 290px;
+		min-width: 210px;
+		padding: 15px 0;
+		position: absolute;
+		top: calc(100% + 10px);
+		z-index: var(--dropdown-z-index);
+	}
+
+	&__item {
+		&:not(:last-child) {
+			margin: 0 0 3px 0;
+		}
+	}
+}

@@ -6,6 +6,7 @@ import { createReducerManager } from './reducerManager';
 import { $api } from 'shared/api/api';
 import { NavigateOptions, To } from 'react-router-dom';
 import { Reducer } from 'redux';
+import { objectsFiltersReducer } from 'entities/ObjectsFilters';
 
 export function createReduxStore(
 	initialState?: StateScheme,
@@ -15,6 +16,7 @@ export function createReduxStore(
 	const rootReducers: ReducersMapObject<StateScheme> = {
 		counter: counterReducer,
 		user: userReducer,
+		objectsFilters: objectsFiltersReducer,
 		...asyncReducers,
 	};
 

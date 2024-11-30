@@ -22,5 +22,14 @@
 	"Profile settings": "Profile settings",
 	"Price": "Price",
 	"From": "From",
-	"To": "To"
+	"To": "To",
+	"Sort by": "Sort by",
+	"Highest price first": "Highest price first",
+	"Lowest price first": "Lowest price first",
+	"Largest m² area first": "Largest m² area first",
+	"Smallest m² area first": "Smallest m² area first",
+	"Apartment": "Apartment",
+	"House": "House",
+	"Search": "Search",
+	"Area size": "Area size"
 }

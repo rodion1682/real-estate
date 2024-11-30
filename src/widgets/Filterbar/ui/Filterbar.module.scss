@@ -1,35 +1,41 @@
 .Filterbar {
 	background-color: var(--bg-color-secondray);
-	display: flex;
-	gap: 20px;
-	height: var(--filberbar-height);
 	padding: 8px 15px;
 
 	&:not(:last-child) {
 		margin: 0 0 20px 0;
 	}
 
-	&__select {
-		flex: 0 1 20%;
+	&__top {
+		display: flex;
+		gap: 20px;
+
+		&:not(:last-child) {
+			margin: 0 0 20px 0;
+		}
 	}
 
 	&__actions {
 		display: flex;
-		flex: 0 1 20%;
-		gap: 10px;
-	}
-
-	&__button {
-		flex: 0 1 50%;
+		gap: 20px;
 	}
 
 	&__input {
 		flex: 1 1 auto;
 	}
 
-	&__dropdown {
-		align-items: center;
+	&__bottom {
 		display: flex;
-		gap: 10px;
+		gap: 20px;
+		justify-content: space-between;
+	}
+
+	&__dropdowns {
+		display: flex;
+		gap: 20px;
+	}
+
+	&__submit {
+		min-width: 200px;
 	}
 }

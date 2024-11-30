@@ -6,6 +6,8 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { CounterSchema } from 'entities/Counter';
+import { ObjectsFiltersScheme } from 'entities/ObjectsFilters';
+
 import { ProfileScheme } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
@@ -16,6 +18,7 @@ export interface StateScheme {
 	user: UserSchema;
 	loginForm?: LoginSchema;
 	profile?: ProfileScheme;
+	objectsFilters: ObjectsFiltersScheme;
 }
 
 export type StateSchemeKey = keyof StateScheme;

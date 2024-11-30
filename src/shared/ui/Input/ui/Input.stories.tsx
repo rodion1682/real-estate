@@ -65,3 +65,16 @@ export const PasswordInputDark: Story = {
 	},
 };
 PasswordInputDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const EuroSign: Story = {
+	args: {
+		value: 'asdewreesfesf',
+		theme: InputTheme.EURO,
+	},
+};
+export const AreaSign: Story = {
+	args: {
+		value: 'asdewreesfesf',
+		theme: InputTheme.AREA,
+	},
+};

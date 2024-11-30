@@ -23,5 +23,14 @@
 	"Profile settings": "Настройки профиля",
 	"Price": "Цена",
 	"From": "От",
-	"To": "До"
+	"To": "До",
+	"Sort by": "Сортировать по",
+	"Highest price first": "Сначала самая высокая цена",
+	"Lowest price first": "Сначала самая низкая цена",
+	"Largest m² area first": "Самая большая площадь м² в первую очередь",
+	"Smallest m² area first": "Наименьшая площадь м² в первую очередь",
+	"Apartment": "Квартира",
+	"House": "Дом",
+	"Search": "Поиск",
+	"Area size": "Размер площади"
 }

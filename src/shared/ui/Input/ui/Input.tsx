@@ -88,7 +88,7 @@ export const Input = memo((props: InputProps) => {
 							: InputType.PASSWORD
 						: type
 				}
-				value={value}
+				value={value !== 0 ? value : ''}
 				onChange={onChangeHandler}
 				placeholder={placeholder}
 				readOnly={readonly}

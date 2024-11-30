@@ -50,7 +50,7 @@ export default [
 	{
 		rules: {
 			// Spacing and Formatting
-			indent: [2, 'tab'],
+			indent: [2, 'tab', { ignoreTernary: true }],
 			'no-tabs': 'off',
 
 			// React rules
