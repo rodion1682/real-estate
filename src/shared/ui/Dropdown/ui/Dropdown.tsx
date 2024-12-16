@@ -16,10 +16,10 @@ interface DropdownProps {
 export const Dropdown = (props: DropdownProps) => {
 	const { className, children, label, buttonActive, path } = props;
 	const [isOpen, setIsOpen] = useState(false);
-	const dropdownList = useRef(null);
+	const dropdownList = useRef<HTMLDivElement>(null);
 	const dropdownRef = useRef<HTMLDivElement>(null);
 	const buttonRef = useRef<HTMLButtonElement>(null);
-	let lastExecution = 0;
+	const lastExecutionRef = useRef(0);
 
 	const onCloseDrowdown = () => {
 		_slideUp(dropdownList.current!);
@@ -33,11 +33,11 @@ export const Dropdown = (props: DropdownProps) => {
 	const toggleDropdown = useCallback(() => {
 		const now = Date.now();
 
-		if (now - lastExecution < 500) {
+		if (now - lastExecutionRef.current < 500) {
 			return;
 		}
 
-		lastExecution = now;
+		lastExecutionRef.current = now;
 		_slideToggle(dropdownList.current!);
 		setIsOpen((prev) => !prev);
 	}, []);

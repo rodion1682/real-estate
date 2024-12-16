@@ -10,5 +10,10 @@
 	"Your city": "Your city",
 	"Favorite objects": "Favorite objects",
 	"My objects": "My objects",
-	"Enter link to avatar": "Enter link to avatar"
+	"Enter link to avatar": "Enter link to avatar",
+	"Server error when saving": "Server error when saving",
+	"First and last name are required": "First and last name are required",
+	"Data not provided": "Data not provided",
+	"Incorrect city": "Incorrect city",
+	"Incorrect age": "Incorrect age"
 }

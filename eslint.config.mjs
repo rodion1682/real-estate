@@ -14,6 +14,7 @@ const languageOptions = {
 		...globals.browser,
 		__IS_DEV__: true,
 		__API__: true,
+		__PROJECT__: true,
 	},
 	ecmaVersion: 'latest',
 	sourceType: 'module',
@@ -50,8 +51,7 @@ export default [
 	{
 		rules: {
 			// Spacing and Formatting
-			indent: [2, 'tab', { ignoreTernary: true }],
-			'no-tabs': 'off',
+			indent: [2, 'tab'],
 
 			// React rules
 			'react/jsx-indent': [2, 'tab'],

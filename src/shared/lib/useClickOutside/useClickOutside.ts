@@ -22,7 +22,7 @@ export const useClickOutside = (props: clickOutsideProps) => {
 				}, duration);
 			}
 		},
-		[isOpen, onClose, target]
+		[isOpen, onClose, target, duration, button]
 	);
 
 	useEffect(() => {
@@ -37,5 +37,5 @@ export const useClickOutside = (props: clickOutsideProps) => {
 		return () => {
 			window.removeEventListener('click', handleClickOutside);
 		};
-	}, [isOpen, handleClickOutside, duration]);
+	}, [isOpen, handleClickOutside, duration, button]);
 };

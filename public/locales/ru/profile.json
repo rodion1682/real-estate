@@ -10,5 +10,10 @@
 	"Your city": "Ваш город",
 	"Favorite objects": "Избранные объекты",
 	"My objects": "Мои объекты",
-	"Enter link to avatar": "Введите ссылку на аватарку"
+	"Enter link to avatar": "Введите ссылку на аватарку",
+	"Server error when saving": "Серверная ошибка при сохранении",
+	"First and last name are required": "Имя и фамилия обязательны",
+	"Data not provided": "Данные не указаны",
+	"Incorrect city": "Некорректный город",
+	"Incorrect age": "Некорректный возраст"
 }
