@@ -7,7 +7,7 @@ import { ProfileFavorite } from 'pages/ProfilePage/ProfileFavorite';
 import { ProfileMyObjects } from 'pages/ProfilePage/ProfileMyObjects';
 import { ProfileSettings } from 'pages/ProfilePage/ProfileSettings';
 
-type AppRoutesProps = RouteProps & {
+export type AppRoutesProps = RouteProps & {
 	authOnly?: boolean;
 };
 
