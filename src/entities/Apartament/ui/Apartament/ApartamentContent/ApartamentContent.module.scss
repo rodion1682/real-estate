@@ -1,0 +1,28 @@
+.Content {
+	&__price {
+		&:not(:last-child) {
+			margin: 0 0 12px 0;
+		}
+	}
+
+	&__adress,
+	&__items,
+	&__description {
+		&:not(:last-child) {
+			margin: 0 0 20px 0;
+		}
+	}
+
+	&__item {
+		align-items: center;
+		display: flex;
+		gap: 5px;
+	}
+
+	&__items {
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 30px;
+	}
+}

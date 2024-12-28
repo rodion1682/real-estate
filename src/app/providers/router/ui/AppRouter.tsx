@@ -38,30 +38,7 @@ export const AppRouter = memo(() => {
 	}, []);
 	return (
 		<>
-			{/*<Suspense fallback={<PageLoader />}>*/}
-			<Routes>
-				{Object.values(routeConfig).map(renderWithWrapper)}
-				{/*{routes.map(({ path, element }) => {
-						if (path === routeConfig.profile.path) {
-							return (
-								<Route key={path} path={path} element={element}>
-									{Object.values(profileRouteConfig).map(
-										({ path, element }) => (
-											<Route
-												key={path}
-												path={path}
-												element={element}
-											/>
-										)
-									)}
-								</Route>
-							);
-						} else {
-							return <Route key={path} path={path} element={element} />;
-						}
-					})}*/}
-			</Routes>
-			{/*</Suspense>*/}
+			<Routes>{Object.values(routeConfig).map(renderWithWrapper)}</Routes>
 		</>
 	);
 });

@@ -11,10 +11,22 @@ interface DropdownProps {
 	label?: string;
 	buttonActive?: boolean;
 	path?: string;
+	multiple?: boolean;
+	multipleLabels?: string[];
+	positionReletive?: boolean;
 }
 
 export const Dropdown = (props: DropdownProps) => {
-	const { className, children, label, buttonActive, path } = props;
+	const {
+		className,
+		children,
+		label,
+		buttonActive,
+		path,
+		multiple,
+		multipleLabels,
+		positionReletive,
+	} = props;
 	const [isOpen, setIsOpen] = useState(false);
 	const dropdownList = useRef<HTMLDivElement>(null);
 	const dropdownRef = useRef<HTMLDivElement>(null);
@@ -61,10 +73,22 @@ export const Dropdown = (props: DropdownProps) => {
 				active={buttonActive}
 				ref={buttonRef}
 			>
-				<span className={cls.Dropdown__label}>{label}</span>
+				{multiple && multipleLabels ? (
+					<span className={cls.Dropdown__label}>
+						{isOpen
+							? multipleLabels[multipleLabels.length - 1]
+							: multipleLabels[0]}
+					</span>
+				) : (
+					<span className={cls.Dropdown__label}>{label}</span>
+				)}
 			</Button>
 			<div
-				className={classNames(cls.Dropdown__items, {}, [className])}
+				className={classNames(
+					cls.Dropdown__items,
+					{ [cls.Dropdown__items_reletive]: positionReletive },
+					[className]
+				)}
 				ref={dropdownList}
 				hidden
 			>

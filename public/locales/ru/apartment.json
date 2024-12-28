@@ -1,3 +1,7 @@
 {
-	"Apartment page": "Страница квартиры"
+	"Apartment page": "Страница квартиры",
+	"Apartment not found": "Квартира не найдена",
+	"An error occurred while loading the apartments": "Произошла ошибка при загрузке апартаментов",
+	"Show description": "Показать описание",
+	"Hide description": "Скрыть описание"
 }

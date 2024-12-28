@@ -5,6 +5,7 @@ import {
 	ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
+import { ApartamentScheme } from 'entities/Apartament';
 import { CounterSchema } from 'entities/Counter';
 import { ObjectsFiltersScheme } from 'entities/ObjectsFilters';
 
@@ -19,6 +20,7 @@ export interface StateScheme {
 	loginForm?: LoginSchema;
 	profile?: ProfileScheme;
 	objectsFilters: ObjectsFiltersScheme;
+	apartament?: ApartamentScheme;
 }
 
 export type StateSchemeKey = keyof StateScheme;

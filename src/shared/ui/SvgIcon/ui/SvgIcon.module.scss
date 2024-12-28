@@ -12,6 +12,15 @@
 			fill: var(--primary-color);
 		}
 	}
+
+	&__stroke {
+		svg {
+			path {
+				fill: var(--bg-color);
+				stroke: var(--primary-color);
+			}
+		}
+	}
 }
 
 .navbar_theme {

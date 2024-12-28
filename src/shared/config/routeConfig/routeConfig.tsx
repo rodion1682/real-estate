@@ -26,7 +26,7 @@ export enum ProfileRoutes {
 
 export const RoutePath: Record<AppRoutes, string> = {
 	[AppRoutes.MAIN]: '/',
-	[AppRoutes.APARTMENT]: '/apartment',
+	[AppRoutes.APARTMENT]: '/apartment/',
 	[AppRoutes.PROFILE]: '/profile',
 	[AppRoutes.NOT_FOUND]: '*',
 };
@@ -37,7 +37,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
 		element: <MainPage />,
 	},
 	[AppRoutes.APARTMENT]: {
-		path: RoutePath.apartment,
+		path: `${RoutePath.apartment}:id`,
 		element: <ApartmentPage />,
 	},
 	[AppRoutes.PROFILE]: {

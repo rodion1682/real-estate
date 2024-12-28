@@ -1,13 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
-import {
-	ButtonHTMLAttributes,
-	ForwardedRef,
-	forwardRef,
-	memo,
-	ReactNode,
-	RefAttributes,
-} from 'react';
+import { ButtonHTMLAttributes, forwardRef, memo, ReactNode } from 'react';
 
 import ChevroneIcon from 'shared/assets/chevrone.svg';
 import { SvgIcon, SvgIconThemes } from 'shared/ui/SvgIcon/ui/SvgIcon';
@@ -22,6 +15,8 @@ export enum ButtonTheme {
 	DROPDOWN = 'dropdown',
 	SELECT = 'select',
 	SWITCHER = 'switcher',
+	THUMBNAIL = 'thumbnail',
+	CLEAR = 'clear',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

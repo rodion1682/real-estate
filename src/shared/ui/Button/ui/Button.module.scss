@@ -140,3 +140,13 @@
 		}
 	}
 }
+
+.thumbnail {
+	border-radius: var(--border-radius);
+	overflow: hidden;
+	position: relative;
+	transition: all 0.3s ease 0s;
+}
+
+.clear {
+}

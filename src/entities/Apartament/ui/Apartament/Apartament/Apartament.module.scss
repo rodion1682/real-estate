@@ -1,0 +1,15 @@
+.Apartament {
+	display: flex;
+	gap: 30px;
+	height: 100%;
+	padding: 15px 0;
+
+	&__slider {
+		flex: 0 1 70%;
+		height: 100%;
+	}
+
+	&__content {
+		flex: 0 0 30%;
+	}
+}

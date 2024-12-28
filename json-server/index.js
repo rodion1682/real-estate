@@ -4,12 +4,18 @@ const fs = require('fs');
 const jsonServer = require('json-server');
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const path = require('path');
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const cors = require('cors');
 
 const server = jsonServer.create();
-
 const router = jsonServer.router(path.resolve(__dirname, 'db.json'));
 
-server.use(jsonServer.defaults({}));
+server.use(cors());
+//server.use(jsonServer.defaults({ static: 'objects' }));
+server.use(
+	'/objects',
+	jsonServer.defaults({ static: path.join(__dirname, 'objects') })
+);
 server.use(jsonServer.bodyParser);
 
 server.use(async (req, res, next) => {

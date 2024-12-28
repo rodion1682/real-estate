@@ -12,12 +12,23 @@ interface SvgIconProps {
 	className?: string;
 	children?: ReactNode;
 	theme?: SvgIconThemes;
+	stroke?: boolean;
 }
 
 export const SvgIcon = memo((props: SvgIconProps) => {
-	const { className, children, theme = SvgIconThemes.NAVBAR_THEME } = props;
+	const {
+		className,
+		children,
+		theme = SvgIconThemes.NAVBAR_THEME,
+		stroke,
+	} = props;
 	return (
-		<div className={classNames(cls.SvgIcon, {}, [className, cls[theme]])}>
+		<div
+			className={classNames(cls.SvgIcon, { [cls.SvgIcon__stroke]: stroke }, [
+				className,
+				cls[theme],
+			])}
+		>
 			{children}
 		</div>
 	);

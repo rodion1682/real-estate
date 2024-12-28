@@ -1,0 +1,41 @@
+.Skeleton {
+	display: flex;
+	gap: 30px;
+	height: 100%;
+	width: 100%;
+
+	&__slider {
+		height: 0;
+		padding-bottom: 40%;
+	}
+
+	&__price {
+		&:not(:last-child) {
+			margin: 0 0 12px 0;
+		}
+	}
+
+	&__items,
+	&__adress,
+	&__description {
+		&:not(:last-child) {
+			margin: 0 0 20px 0;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex: 0 0 30%;
+		flex-direction: column;
+		gap: 20px;
+
+		&:not(:last-child) {
+			margin: 0 0 20px 0;
+		}
+	}
+
+	&__items {
+		display: flex;
+		gap: 20px;
+	}
+}

@@ -1,9 +1,11 @@
 .Filterbar {
 	background-color: var(--bg-color-secondray);
+	margin-left: -15px;
+	margin-right: -15px;
 	padding: 8px 15px;
 
 	&:not(:last-child) {
-		margin: 0 0 20px 0;
+		margin-bottom: 20px;
 	}
 
 	&__top {
