@@ -3,5 +3,7 @@
 	"Apartment not found": "Apartment not found",
 	"An error occurred while loading the apartments": "An error occurred while loading the apartments",
 	"Show description": "Show description",
-	"Hide description": "Hide description"
+	"Hide description": "Hide description",
+	"Comment": "Comment",
+	"No comments found": "No comments found"
 }

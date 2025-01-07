@@ -21,6 +21,7 @@ import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Slider } from 'shared/ui/Slider';
 import { ApartamentContent } from '../ApartamentContent/ApartamentContent';
 import { ApartamentSkeleton } from '../ApartamentSkeleton/ApartamentSkeleton';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 
 interface ApartamentProps {
 	className?: string;
@@ -39,11 +40,9 @@ export const Apartament = memo((props: ApartamentProps) => {
 	const apartament = useSelector(getApartamentData);
 	const error = useSelector(getApartamentError);
 
-	useEffect(() => {
-		if (__PROJECT__ !== 'storybook') {
-			dispatch(fetchApartamentById(id));
-		}
-	}, [dispatch, id]);
+	useInitialEffect(() => {
+		dispatch(fetchApartamentById(id));
+	});
 
 	let content;
 

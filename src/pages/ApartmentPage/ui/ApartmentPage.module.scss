@@ -1,3 +1,10 @@
 .ApartmentPage {
 	height: 100%;
+
+	&__apartament,
+	&__title {
+		&:not(:last-child) {
+			margin: 0 0 20px 0;
+		}
+	}
 }

@@ -37,25 +37,22 @@
 	],
 	"comments": [
 		{
-			"id": 1,
+			"id": "1",
+			"text": "some comment",
 			"apartamentId": "1",
-			"userId": "1",
-			"text": "some comment 1",
-			"postId": "1"
+			"userId": "1"
 		},
 		{
-			"id": 1,
-			"apartamentId": "1",
-			"userId": "1",
+			"id": "2",
 			"text": "some comment 2",
-			"postId": "1"
+			"apartamentId": "1",
+			"userId": "1"
 		},
 		{
-			"id": 1,
-			"apartamentId": "1",
-			"userId": "1",
+			"id": "3",
 			"text": "some comment 3",
-			"postId": "1"
+			"apartamentId": "1",
+			"userId": "1"
 		}
 	],
 	"users": [
@@ -63,13 +60,15 @@
 			"id": "1",
 			"username": "admin",
 			"password": "123",
-			"role": "ADMIN"
+			"role": "ADMIN",
+			"avatar": "https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png"
 		},
 		{
 			"id": "2",
 			"username": "user",
 			"password": "123",
-			"role": "USER"
+			"role": "USER",
+			"avatar": "https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png"
 		}
 	],
 	"profile": {

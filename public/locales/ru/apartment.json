@@ -3,5 +3,7 @@
 	"Apartment not found": "Квартира не найдена",
 	"An error occurred while loading the apartments": "Произошла ошибка при загрузке апартаментов",
 	"Show description": "Показать описание",
-	"Hide description": "Скрыть описание"
+	"Hide description": "Скрыть описание",
+	"Comment": "Комментарий",
+	"No comments found": "Комментарии не найдены"
 }

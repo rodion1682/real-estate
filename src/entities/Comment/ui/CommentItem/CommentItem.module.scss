@@ -1,0 +1,15 @@
+.CommentItem {
+	border: 1px solid var(--primary-color);
+	border-radius: var(--border-radius);
+	padding: 15px;
+
+	&__header {
+		align-items: center;
+		display: flex;
+		gap: 20px;
+
+		&:not(:last-child) {
+			margin: 0 0 10px 0;
+		}
+	}
+}

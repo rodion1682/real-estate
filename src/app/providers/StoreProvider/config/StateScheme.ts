@@ -12,6 +12,7 @@ import { ObjectsFiltersScheme } from 'entities/ObjectsFilters';
 import { ProfileScheme } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
+import { ApartamentCommentScheme } from 'pages/ApartmentPage';
 import { NavigateOptions, To } from 'react-router-dom';
 
 export interface StateScheme {
@@ -21,6 +22,7 @@ export interface StateScheme {
 	profile?: ProfileScheme;
 	objectsFilters: ObjectsFiltersScheme;
 	apartament?: ApartamentScheme;
+	apartamentComments?: ApartamentCommentScheme;
 }
 
 export type StateSchemeKey = keyof StateScheme;
